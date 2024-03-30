@@ -8,6 +8,13 @@ namespace FinallyModules10_Ex1
 {
     internal class Colculater : IColCulate
     {
+        ILogger Logger {  get;}
+        public Colculater(ILogger logger)
+        {
+
+            Logger = logger;
+
+        }
         public double Colculate(double first, double second) => first + second;
         
 
@@ -23,11 +30,11 @@ namespace FinallyModules10_Ex1
                     first = Convert.ToDouble(Console.ReadLine());
                     second = Convert.ToDouble(Console.ReadLine());
 
-                    Console.WriteLine($"Сумма этих числе равна: {Colculate(first,second)}");
+                    Logger.Log($"Сумма этих числе равна: {Colculate(first,second)}");
                 }
                 catch
                 {
-                    Console.WriteLine("Введите корректные значения");
+                    Logger.Error("Введите корректные значения");
                 }
             }
         }
