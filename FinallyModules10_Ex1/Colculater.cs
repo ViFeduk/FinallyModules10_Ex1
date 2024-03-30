@@ -8,12 +8,8 @@ namespace FinallyModules10_Ex1
 {
     internal class Colculater : IColCulate
     {
-        public double Colculate(double first, double second)
-        {
-           
-            return first + second;
-            
-        }
+        public double Colculate(double first, double second) => first + second;
+        
 
         public void WorkCalculate()
         {
